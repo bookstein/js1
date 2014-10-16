@@ -12,29 +12,32 @@ var cat = {
     lonliness: 3,
     happiness: 15,
     obedientness: -30,
-    status: function(vitals)
+    status: function(vitals, name)
     {
-        console.log([vitals]);
+        console.log(name, [vitals]);
     },
     feed: function()
     {
+        var amount = Math.floor(Math.random() * 10);
         console.log("om nom nom");
-        this.hunger = this.hunger -5;
-        this.status(this.hunger);
+        this.hunger = this.hunger - amount;
+        this.status(this.hunger, "Hunger ");
     },
     purr: function()
     {
         console.log("prrrrrrrrrrrrrrrrrrrrrrrrrr");
         this.happiness += 10;
+        this.status(this.happiness, "Happiness");
     },
     claw: function()
     {
         console.log("grrrrrr");
         this.lonliness +=15;
+        this.status(this.lonliness, "Lonliness ");
     },
     play: function(type_of_play)
     {
-        var mood = this.random_cat()
+        var mood = this.random_cat();
         
         if (type_of_play == "pet")
         {
@@ -42,8 +45,7 @@ var cat = {
         }
         else if (type_of_play == "laser")
         {
-            this.purr();
-            this.hunger += 15;
+            this[mood]();
         }
         else {
             this.claw();
