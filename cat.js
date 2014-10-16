@@ -54,4 +54,4 @@ var cat = {
 
 };
 
-cat.play("pet")
+cat.play("pet");

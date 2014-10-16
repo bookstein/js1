@@ -102,3 +102,50 @@ function list_dups(d)
 
 
 list_dups(duplicates([1,2,3,1,2,3,2,4]))
+
+
+// ALTERNATIVE VERSION OF EXERCISE 3 duplicates function THAT DOES NOT WORK
+// IS SUPPOSED TO CHECK FOR STRICT EQUALITY.... DOES NOT. BREAKS on "TRUE" and TRUE
+function duplicates(listt)
+{
+    var d = {}
+    for (var n=0; n<listt.length; n++)
+    {
+        if (d[listt[n]])
+        {
+            // console.log(d[listt[n]])
+            // console.log("This key is in the dictionary!" + listt[n])
+            // console.log("KEYs " + Object.keys(d))
+            for(var i=0; i<Object.keys(d).length; i++)
+            {
+                console.log("Right now, at i, " + Object.keys(d)[i])
+                console.log("Compare to " + listt[n])
+            //     if (listt[n] === Object.keys(d)[i])
+            //     {
+                    
+                    // d[listt[n]] += 1;
+            //         console.log(d[i])
+            //     }
+            //     else
+            //     {
+            //         d[listt[n]] = 1;
+            //     }
+                
+            }
+            console.log("end of for var i")
+        }
+        else
+        {
+            d[listt[n]] = 1;
+        }
+        
+    }
+    // console.log(d)
+    return d 
+}
+
+
+
+var hackbrightStudents = ["katie", "amy", "jenny", "katie", "kelley", "katie", "amy"]
+
+var randomJunkIFound = ["katie", "true", true, "gargoyles", "!", 2 + 3, "2 + 3", 19, "19", 19 === "19", 6, false, false]
