@@ -51,9 +51,6 @@
     <!--
    
 
-    Extra Credit 1:
-        Using setTimeout or setInterval, cause the "awesome-box" to toggle its visability once a second
-
     Extra Credit 2:
         Using setTimeout or setInterval, cause the "awesome-box" to move across the screen from left to right
 
@@ -113,15 +110,20 @@
         var awesome_box = document.getElementById("awesome-box");
         be_awesome.addEventListener("click", function (e) {
             e.preventDefault();
-            awesome_box.classList.toggle('hidden');
+            setInterval(function() 
+                {awesome_box.classList.toggle('hidden');
 
-        })
+        }, 500)})
+
+
     // The "awesome-box" div below is hidden using a CSS class called "hidden"
     // Add an event listener and attach it to the "be-awesome" id.
     // When the link is clicked:
     //     Prevent the default action
     //     Remove the "hidden" class using the toggle function for elem.classList
-        
+
+    // Extra Credit 1:
+    //    Using setTimeout or setInterval, cause the "awesome-box" to toggle its visability once a second
     
     </script>
 
